@@ -1,6 +1,6 @@
 # Jeopardy
-##### By Wei, Misaki, Jake, and Andrew
-###### Created 04 Feburary, 2020
+### By Wei, Misaki, Jake, and Andrew
+#### Created 04 Feburary, 2020
 
 ## Description 
 
