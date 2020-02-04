@@ -4,6 +4,7 @@ using Jeopardy.Models;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 using RestSharp;
+using System;
 
 namespace Jeopardy.Controllers
 {
@@ -13,6 +14,7 @@ namespace Jeopardy.Controllers
         {
             Board MyBoard = new Board();
             MyBoard.GetCategories();
+            Console.Write("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" + MyBoard);
             return View();
         }
     }

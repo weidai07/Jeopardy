@@ -18,12 +18,17 @@ namespace Jeopardy.Models
       var apiCallTask = ApiHelper.ApiCallCategories();
       var result = apiCallTask.Result;
 
-      JObject jsonResponse = JsonConvert.DeserializeObject<JObject>(result);
-      this.Categories = JsonConvert.DeserializeObject<List<Category>>(jsonResponse["results"].ToString());
+      JArray jsonResponse = JsonConvert.DeserializeObject<JArray>(result);
+    //   this.Categories = JsonConvert.DeserializeObject<List<Category>>(jsonResponse["results"].ToString());
+      
+    foreach (var item in jsonResponse)
+    {
+        this.Categories = JsonConvert.DeserializeObject<List<Category>>(item.ToString());
+    }
 
       foreach(Category category in Categories)
       {
-            // category.GetQuestions();
+            category.GetQuestions(category.Id);
       }
     }
   }

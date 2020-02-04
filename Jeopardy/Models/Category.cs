@@ -8,6 +8,7 @@ namespace Jeopardy.Models
   {
     public string Id { get; set; }
     public string Title { get; set; }
+    public int clues_count { get; set; }
     public List<Question> Questions { get; set; }
 
     public Category()
