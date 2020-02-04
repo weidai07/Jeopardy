@@ -12,6 +12,8 @@ namespace Jeopardy.Controllers
     {
         public ActionResult Index()
         {
+            Board MyBoard = new Board();
+            MyBoard.GetCategories();
             return View();
         }
     }
