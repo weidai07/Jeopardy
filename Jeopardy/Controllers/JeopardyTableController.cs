@@ -1,19 +1,19 @@
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Identity;
 using Jeopardy.Models;
-using System.Collections.Generic;
-using System.Linq;
-using Microsoft.EntityFrameworkCore;
+using System.Threading.Tasks;
+using Newtonsoft.Json;
+using RestSharp;
 
 namespace Jeopardy.Controllers
 {
-  public class JeopardyTableController : Controller
-  {
-
-    [HttpGet("/JeopardyTable")]  
-    public ActionResult Index()
+    public class JeopardyTableController : Controller
     {
-      return View();
+        public ActionResult Index()
+        {
+            Board MyBoard = new Board();
+            MyBoard.GetCategories();
+            return View();
+        }
     }
-  }
-
-} 
+}
