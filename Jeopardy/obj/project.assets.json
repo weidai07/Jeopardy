@@ -12081,11 +12081,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/Guest/Desktop/Jeopardy.Solution/Jeopardy/Jeopardy.csproj",
+      "projectUniqueName": "/Users/Guest/Desktop/Jeopardy/Jeopardy/Jeopardy.csproj",
       "projectName": "Jeopardy",
-      "projectPath": "/Users/Guest/Desktop/Jeopardy.Solution/Jeopardy/Jeopardy.csproj",
+      "projectPath": "/Users/Guest/Desktop/Jeopardy/Jeopardy/Jeopardy.csproj",
       "packagesPath": "/Users/Guest/.nuget/packages/",
-      "outputPath": "/Users/Guest/Desktop/Jeopardy.Solution/Jeopardy/obj/",
+      "outputPath": "/Users/Guest/Desktop/Jeopardy/Jeopardy/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
