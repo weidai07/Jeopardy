@@ -6,18 +6,18 @@
 
 Jeopardy is an American television game show created by Merv Griffin. The show features a quiz competition in which contestants are presented with general knowledge clues in the form of answers, and must phrase their responses in the form of questions.
 
-Additional information for this game can be found on Wikipedia; https://en.wikipedia.org/wiki/Jeopardy!
+Additional information for this game can be found on [Wikipedia](https://en.wikipedia.org/wiki/Jeopardy!)
  
 ## Links:
 
-* Github - https://github.com/weidai07/Jeopardy
-* Github - https://github.com/misakimichy/Jeopardy
-* Github - https://github.com/JakeAsh22/Jeopardy
-* Github - https://github.com/abatesaccs/Jeopardy
+* Github - [Wei](https://github.com/weidai07/Jeopardy)
+* Github - [Misaki](https://github.com/misakimichy/Jeopardy)
+* Github - [Jake](https://github.com/JakeAsh22/Jeopardy)
+* Github - [Andrew](https://github.com/abatesaccs/Jeopardy)
 
 ## Setup/Installation Requirements:
 
-1. Open - Select one of the links listed above 
+1. Open - Select one of the group member names listed above 
 2. Clone repository to local machine 
 3. Build and Run project
 
@@ -34,6 +34,7 @@ Additional information for this game can be found on Wikipedia; https://en.wikip
 * Player must give the answer in the form of a question before clicking again. The host may want to set a time limit for answering the question.
 * If the player or team is correct, they are awarded the point value of the question. 
 * Continue until all questions have been answered. The player or team with the most points wins.
+* [Game Rules Source](https://www.iup.edu/teachingexcellence/reflective-practice/past-events/2008-09/sample-games-to-be-used-in-the-classroom/instructions-for-playing-jeopardy/) 
 
 ## Known Bugs
 
@@ -44,6 +45,8 @@ Additional information for this game can be found on Wikipedia; https://en.wikip
 * C#
 * .NET
 * Microsoft(MS) Test
+* SQL
+* LINQ 
 
 ### License:
 
