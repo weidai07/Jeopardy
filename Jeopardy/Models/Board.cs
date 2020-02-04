@@ -13,7 +13,7 @@ namespace Jeopardy.Models
         this.Categories = new List<Category>();
     }
 
-    public static List<Category> GetCategories()
+    public void GetCategories()
     {
       var apiCallTask = ApiHelper.ApiCallCategories();
       var result = apiCallTask.Result;
@@ -23,7 +23,7 @@ namespace Jeopardy.Models
 
       foreach(Category category in Categories)
       {
-            category.GetQuestions();
+            // category.GetQuestions();
       }
     }
   }

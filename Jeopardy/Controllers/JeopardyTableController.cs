@@ -2,7 +2,6 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Identity;
 using Jeopardy.Models;
 using System.Threading.Tasks;
-using Jeopardy.ViewModels;
 using Newtonsoft.Json;
 using RestSharp;
 

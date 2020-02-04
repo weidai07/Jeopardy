@@ -15,7 +15,7 @@ namespace Jeopardy.Models
         this.Questions = new List<Question>();
     }
 
-    public static List<Question> GetQuestions(string apiSearch)
+    public void GetQuestions(string apiSearch)
     {
       var apiCallTask = ApiHelper.ApiCall(apiSearch);
       var result = apiCallTask.Result;
