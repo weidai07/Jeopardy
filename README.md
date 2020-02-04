@@ -4,35 +4,36 @@
 
 ## Description 
 
-This is our project for the second team week at Epicodus. 
+Jeopardy is an American television game show created by Merv Griffin. The show features a quiz competition in which contestants are presented with general knowledge clues in the form of answers, and must phrase their responses in the form of questions.
+
+Additional information for this game can be found on Wikipedia; https://en.wikipedia.org/wiki/Jeopardy!
  
 ## Links:
 
-Github - https://github.com/weidai07/Jeopardy
+* Github - https://github.com/weidai07/Jeopardy
+* Github - https://github.com/misakimichy/Jeopardy
+* Github - https://github.com/JakeAsh22/Jeopardy
+* Github - https://github.com/abatesaccs/Jeopardy
 
 ## Setup/Installation Requirements:
 
-1. Open - https://github.com/weidai07/Jeopardy
+1. Open - Select one of the links listed above 
 2. Clone repository to local machine 
 3. Build and Run project
 
   - $ dotnet restore - when you are ready to restore the dependencies of the project
   - $ dotnet build - when you are ready to build the project
-  - $ dotnet run - to run the project 
+  - $ dotnet watch run - to run the project 
   - $ dotnet test - for testing the project
   
-
 ### Specification
 
-This program is designed to .....
-
-For example:
-
-| Category | Question | Answer | Points |
-| :-------------     | :------------- | :------------- | :------------- |
-| A | "1" | "2" | 200 |
-
-
+* Play individually or in groups.
+* Pick a category and a point value.
+* Click on the chosen box for the question.
+* Player must give the answer in the form of a question before clicking again. The host may want to set a time limit for answering the question.
+* If the player or team is correct, they are awarded the point value of the question. 
+* Continue until all questions have been answered. The player or team with the most points wins.
 
 ## Known Bugs
 
