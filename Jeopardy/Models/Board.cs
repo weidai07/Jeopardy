@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using System;
 
 namespace Jeopardy.Models
 {
@@ -17,15 +18,18 @@ namespace Jeopardy.Models
     {
       var apiCallTask = ApiHelper.ApiCallCategories();
       var result = apiCallTask.Result;
-
       JArray jsonResponse = JsonConvert.DeserializeObject<JArray>(result);
-    //   this.Categories = JsonConvert.DeserializeObject<List<Category>>(jsonResponse["results"].ToString());
       
-    foreach (var item in jsonResponse)
+    for (int i = 0; i < jsonResponse.Count; i++)
     {
-        this.Categories = JsonConvert.DeserializeObject<List<Category>>(item.ToString());
+        Category myCategory = new Category();
+        myCategory.Id = jsonResponse[i]["id"].ToString();
+        myCategory.Title = jsonResponse[i]["title"].ToString();
+        myCategory.clues_count = jsonResponse[i]["clues_count"].ToString();
+        Console.WriteLine("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" + myCategory.Id);
+        this.Categories.Add(myCategory);
     }
-
+        
       foreach(Category category in Categories)
       {
             category.GetQuestions(category.Id);

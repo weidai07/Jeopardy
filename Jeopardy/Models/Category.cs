@@ -8,7 +8,7 @@ namespace Jeopardy.Models
   {
     public string Id { get; set; }
     public string Title { get; set; }
-    public int clues_count { get; set; }
+    public string clues_count { get; set; }
     public List<Question> Questions { get; set; }
 
     public Category()
@@ -18,11 +18,10 @@ namespace Jeopardy.Models
 
     public void GetQuestions(string apiSearch)
     {
-      var apiCallTask = ApiHelper.ApiCall(apiSearch);
-      var result = apiCallTask.Result;
+    //   var apiCallTask = ApiHelper.ApiCall(apiSearch);
+    //   var result = apiCallTask.Result;
 
-      JObject jsonResponse = JsonConvert.DeserializeObject<JObject>(result);
-      this.Questions = JsonConvert.DeserializeObject<List<Question>>(jsonResponse["results"].ToString());
+    //   JObject jsonResponse = JsonConvert.DeserializeObject<JObject>(result);
+    //   this.Questions = JsonConvert.DeserializeObject<List<Question>>(jsonResponse["results"].ToString());
     }
   }
-}

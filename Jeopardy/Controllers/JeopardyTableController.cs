@@ -14,7 +14,6 @@ namespace Jeopardy.Controllers
         {
             Board MyBoard = new Board();
             MyBoard.GetCategories();
-            Console.Write("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" + MyBoard);
             return View();
         }
     }
