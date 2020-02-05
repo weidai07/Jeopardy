@@ -5,7 +5,12 @@ color: yellow;
 a {
     color: yellow;
     text-decoration: underline;
+    pointer-events: none;
+    cursor: default;
 }
-.colNames {
-    color: yellow; 
+a.my-class { color: yellow }
+a.my-class:visited { 
+    color: #040481;
+    pointer-events: none;
+    cursor: default;
 }
