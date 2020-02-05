@@ -13,7 +13,7 @@ namespace Jeopardy.Controllers
         [HttpGet("/answer")]
         public ActionResult Index()
         {
-            //use question id and pass the answer
+            // Console.WriteLine("\n\n\n\n\n\n\n\n\n\n" + MyBoard.Categories.ElementAt(1).Questions.ElementAt(1).Value + "\n\n\n\n\n\n\n\n\n\n");
             return View();
         }
 
