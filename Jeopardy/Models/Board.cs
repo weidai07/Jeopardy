@@ -26,7 +26,6 @@ namespace Jeopardy.Models
         myCategory.Id = jsonResponse[i]["id"].ToString();
         myCategory.Title = jsonResponse[i]["title"].ToString();
         myCategory.clues_count = jsonResponse[i]["clues_count"].ToString();
-        Console.WriteLine("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" + myCategory.Id);
         this.Categories.Add(myCategory);
     }
         

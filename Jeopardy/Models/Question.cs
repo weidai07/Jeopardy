@@ -9,7 +9,7 @@ namespace Jeopardy.Models
     public string Id { get; set; }
     public string Answer { get; set; }
     public string Body { get; set; }
-    public int Value { get; set; }
+    public string Value { get; set; }
     public int CategoryId { get; set; }
   }
 }

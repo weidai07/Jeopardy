@@ -16,12 +16,23 @@ namespace Jeopardy.Models
         this.Questions = new List<Question>();
     }
 
-    public void GetQuestions(string apiSearch)
+    public void GetQuestions(string id)
     {
-    //   var apiCallTask = ApiHelper.ApiCall(apiSearch);
-    //   var result = apiCallTask.Result;
+      string searchTerm = "/clues?category=" + id;
+      var apiCallTask = ApiHelper.ApiCall(searchTerm);
+      var result = apiCallTask.Result;
 
-    //   JObject jsonResponse = JsonConvert.DeserializeObject<JObject>(result);
-    //   this.Questions = JsonConvert.DeserializeObject<List<Question>>(jsonResponse["results"].ToString());
+      JArray jsonResponse = JsonConvert.DeserializeObject<JArray>(result);
+
+      for (int i = 0; i < jsonResponse.Count; i++)
+      {
+        Question myQuestion = new Question();
+        myQuestion.Id = jsonResponse[i]["id"].ToString();
+        myQuestion.Answer = jsonResponse[i]["answer"].ToString();
+        myQuestion.Body = jsonResponse[i]["question"].ToString();
+        myQuestion.Value = jsonResponse[i]["value"].ToString();
+        this.Questions.Add(myQuestion);
+      }
     }
   }
+}
