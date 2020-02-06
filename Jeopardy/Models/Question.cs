@@ -18,18 +18,18 @@ namespace Jeopardy.Models
     {
       string searchTerm = "/clues?category=" + id;
       List<Question> OutList = new List<Question>();
+      var apiCallTask = ApiHelper.ApiCall(searchTerm);
+      var result = apiCallTask.Result;
+      JArray jsonResponse = JsonConvert.DeserializeObject<JArray>(result);
       for (int i = 0; i < num; i++)
-      {
-        var apiCallTask = ApiHelper.ApiCall(searchTerm);
-        var result = apiCallTask.Result;
-        JArray jsonResponse = JsonConvert.DeserializeObject<JArray>(result);
-
+      { 
+        // this returns five results not one V
         Question myQuestion = new Question();
-        myQuestion.QuestionId = jsonResponse[0]["id"].ToString();
-        myQuestion.Answer = jsonResponse[0]["answer"].ToString();
-        myQuestion.Body = jsonResponse[0]["question"].ToString();
-        myQuestion.Value = jsonResponse[0]["value"].ToString();
-        myQuestion.CatId = jsonResponse[0]["category_id"].ToString();
+        myQuestion.QuestionId = jsonResponse[i]["id"].ToString();
+        myQuestion.Answer = jsonResponse[i]["answer"].ToString();
+        myQuestion.Body = jsonResponse[i]["question"].ToString();
+        myQuestion.Value = jsonResponse[i]["value"].ToString();
+        myQuestion.CatId = jsonResponse[i]["category_id"].ToString();
         OutList.Add(myQuestion);
       }
       return OutList;
