@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Jeopardy.Migrations
 {
     [DbContext(typeof(JeopardyContext))]
-    [Migration("20200206183554_initial1")]
-    partial class initial1
+    [Migration("20200206204909_initial")]
+    partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
