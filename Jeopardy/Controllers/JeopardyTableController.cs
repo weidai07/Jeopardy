@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Identity;
+using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using Jeopardy.Models;
@@ -18,6 +19,11 @@ namespace Jeopardy.Controllers
         {
             _db = db;
         }
+
+        // public ActionResult Setup()
+        // {
+                //use this as setup for the table so you can reuse index
+        // }
 
         public ActionResult Index()
         {
@@ -43,6 +49,8 @@ namespace Jeopardy.Controllers
                 }
                 _db.SaveChanges();
             }
+            ViewBag.Categories = _db.Categories.ToList();
+            Dictionary<string, List<Category>> data = new Dictionary<string, List<Category>>();
             var list = _db.Questions.ToList();
             return View(list);
         }

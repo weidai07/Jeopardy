@@ -7,12 +7,12 @@
 <table class="table">
   <thead class="thead-dark">
     <tr>
-      <th scope="col">A</th>
-      <th scope="col">B</th>
-      <th scope="col">C</th>
-      <th scope="col">D</th>
-      <th scope="col">E</th>
-      <th scope="col">F</th>
+      <th scope="col">@ViewBag.Categories[0].Title</th>
+      <th scope="col">@ViewBag.Categories[1].Title</th>
+      <th scope="col">@ViewBag.Categories[2].Title</th>
+      <th scope="col">@ViewBag.Categories[3].Title</th>
+      <th scope="col">@ViewBag.Categories[4].Title</th>
+      <th scope="col">@ViewBag.Categories[5].Title</th>
     </tr>
   </thead>
   <tbody>
@@ -58,4 +58,3 @@
     </tr>
   </tbody>
 </table>
-@Html.ActionLink("Click here for answer", "Index","Question")
