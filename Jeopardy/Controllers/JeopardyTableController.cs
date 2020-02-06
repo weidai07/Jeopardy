@@ -43,12 +43,16 @@ namespace Jeopardy.Controllers
                 }
                 _db.SaveChanges();
             }
-            return View();
+            var list = _db.Questions.ToList();
+            return View(list);
         }
-
-        public ActionResult Redirect()
+        [HttpGet]
+        [Route("/JeopardyTable/box/{id}")]
+        public ActionResult Box(string id)
         {
-            return RedirectToAction("Index", "JeopardyTable");
+            var theQ = _db.Questions.FirstOrDefault(n => n.QuestionId == id);
+            Console.WriteLine("\n\n\n\n\n\n\n\n\n\n\n" + id + "\n\n\n\n\n" + theQ);
+            return View(theQ);
         }
     }
 }

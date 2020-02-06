@@ -23,7 +23,6 @@ namespace Jeopardy.Models
       JArray jsonResponse = JsonConvert.DeserializeObject<JArray>(result);
       for (int i = 0; i < num; i++)
       { 
-        // this returns five results not one V
         Question myQuestion = new Question();
         myQuestion.QuestionId = jsonResponse[i]["id"].ToString();
         myQuestion.Answer = jsonResponse[i]["answer"].ToString();
