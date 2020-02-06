@@ -10,10 +10,17 @@ namespace Jeopardy.Controllers
 {
     public class AnswerController : Controller
     {
+
+        private readonly JeopardyContext _db;
+
+        public AnswerController(JeopardyContext db)
+        {
+            _db = db;
+        }
+
         [HttpGet("/answer")]
         public ActionResult Index()
         {
-            //use question id and pass the answer
             return View();
         }
 

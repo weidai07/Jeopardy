@@ -1,5 +1,6 @@
 using System.Threading.Tasks;
 using RestSharp;
+using System;
 
 namespace Jeopardy.Models
 {
@@ -8,7 +9,7 @@ namespace Jeopardy.Models
     public static async Task<string> ApiCallCategories()
     {
         RestClient client = new RestClient("http://jservice.io/api/");
-        RestRequest request = new RestRequest($"categories?count=6", Method.GET);
+        RestRequest request = new RestRequest($"categories?offset={ApiHelper.RandomNumber(1,1000)}count=1", Method.GET);
         var response = await client.ExecuteTaskAsync(request);
         return response.Content;
     }
@@ -20,5 +21,11 @@ namespace Jeopardy.Models
       var response = await client.ExecuteTaskAsync(request);
       return response.Content;
     }
+
+    public static int RandomNumber(int min, int max)  
+    {  
+        Random random = new Random();  
+        return random.Next(min, max);  
+    }  
   }
 }

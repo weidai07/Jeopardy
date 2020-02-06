@@ -1,38 +1,42 @@
 using System.Collections.Generic;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using Microsoft.EntityFrameworkCore;
+using System.ComponentModel.DataAnnotations;
 
 namespace Jeopardy.Models
 {
   public class Category
   {
-    public string Id { get; set; }
-    public string Title { get; set; }
-    public string clues_count { get; set; }
-    public List<Question> Questions { get; set; }
 
     public Category()
     {
-        this.Questions = new List<Question>();
+      this.Questions = new HashSet<Question>();
     }
+    [Key]
+    public int Id { get; set; }
+    public string CategoryId { get; set; }
+    public string Title { get; set; }
+    public string clues_count { get; set; }
+    public virtual ICollection<Question> Questions { get; set; }
 
-    public void GetQuestions(string id)
+
+    public static List<Category> GetCategories(int num)
     {
-      string searchTerm = "/clues?category=" + id;
-      var apiCallTask = ApiHelper.ApiCall(searchTerm);
-      var result = apiCallTask.Result;
-
-      JArray jsonResponse = JsonConvert.DeserializeObject<JArray>(result);
-
-      for (int i = 0; i < jsonResponse.Count; i++)
+      List<Category> OutList = new List<Category>();
+      for(int i = 0; i < num; i++)
       {
-        Question myQuestion = new Question();
-        myQuestion.Id = jsonResponse[i]["id"].ToString();
-        myQuestion.Answer = jsonResponse[i]["answer"].ToString();
-        myQuestion.Body = jsonResponse[i]["question"].ToString();
-        myQuestion.Value = jsonResponse[i]["value"].ToString();
-        this.Questions.Add(myQuestion);
+        var apiCallTask = ApiHelper.ApiCallCategories();
+        var result = apiCallTask.Result;
+        JArray jsonResponse = JsonConvert.DeserializeObject<JArray>(result);
+
+        Category myCategory = new Category();
+        myCategory.CategoryId = jsonResponse[0]["id"].ToString();
+        myCategory.Title = jsonResponse[0]["title"].ToString();
+        myCategory.clues_count = jsonResponse[0]["clues_count"].ToString();
+        OutList.Add(myCategory);
       }
+      return OutList;
     }
   }
 }
