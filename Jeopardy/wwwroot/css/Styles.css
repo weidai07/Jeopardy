@@ -5,8 +5,8 @@ color: yellow;
 a {
     color: yellow;
     text-decoration: underline;
-    pointer-events: none;
-    cursor: default;
+    /* pointer-events: none;
+    cursor: default; */
 }
 a.my-class { color: yellow }
 a.my-class:visited { 
