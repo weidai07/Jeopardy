@@ -1,5 +1,7 @@
 @{
   Layout = "_Layout";
 }
-<h1>@Model.Body</h1>
-@Html.ActionLink("Click here for answer", "Index", "Answer", new { id = @Model.QuestionId})
+<div class="text-center">
+  <h1>@Model.Body</h1>
+  @Html.ActionLink("Click here for answer", "Index", "Answer", new { id = @Model.QuestionId})
+</div>

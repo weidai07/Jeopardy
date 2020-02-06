@@ -2,7 +2,29 @@
     background-color: #040481; 
     color: yellow;
     }
+
 a {
     color: yellow;
     text-decoration: underline;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.text-center {
+    margin: 0 auto;
+    max-width: 500px;
+}
+
+.table {
+    table-layout: fixed;
+    text-align: center;
+}
+
+th[scope] {
+    vertical-align: middle;
 }
