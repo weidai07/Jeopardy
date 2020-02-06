@@ -21,7 +21,9 @@ namespace Jeopardy.Controllers
         [HttpGet("/answer")]
         public ActionResult Index()
         {
-            return View();
+            string questionId = "63925";
+            Question thisQuestion = _db.Questions.FirstOrDefault(questions => questions.QuestionId == questionId);
+            return View(thisQuestion);
         }
 
         [HttpPost]
