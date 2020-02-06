@@ -25,9 +25,13 @@ namespace Jeopardy.Controllers
 
             foreach(Category cat in CategoryHolder)
             {
-                var firstCategory = _db.Categories.FirstOrDefault();
-                if(firstCategory != null)
-                _db.Categories.Remove(firstCategory);
+                var numCats = _db.Categories.ToList();
+                if(numCats.Count >= 6)
+                {
+                    var firstCategory = _db.Categories.FirstOrDefault();
+                    if(firstCategory != null)
+                    _db.Categories.Remove(firstCategory);
+                }
                 _db.Categories.Add(cat);
                 var QuestionHolder = Question.GetQuestions(cat.CategoryId, 5);
                 foreach(Question q in QuestionHolder)
