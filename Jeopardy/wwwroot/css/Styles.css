@@ -8,7 +8,12 @@ a {
     text-decoration: underline;
 }
 
-.title {
+body {
+    font-size: 20px;
+    text-align: center;
+}
+
+.title, .content {
     margin-bottom: 30px;
 }
 
@@ -25,11 +30,11 @@ a {
     border: 1px solid white;
     border-radius: 3px;
     padding: 30px;
+    max-height: 50%;
 }
 
 .table {
     table-layout: fixed;
-    text-align: center;
 }
 
 .table thead th {
