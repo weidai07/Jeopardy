@@ -85,7 +85,6 @@ namespace Jeopardy.Controllers
         public ActionResult Box(string id)
         {
             var theQ = _db.Questions.FirstOrDefault(n => n.QuestionId == id);
-            Console.WriteLine("\n\n\n\n\n\n\n\n\n\n\n" + id + "\n\n\n\n\n" + theQ);
             return View(theQ);
         }
         // [Route("/JeopardyTable/NewTable")]
