@@ -18,11 +18,10 @@ namespace Jeopardy.Controllers
             _db = db;
         }
 
-        [HttpGet("/answer")]
+        [HttpGet("/JeopardyTable/box/{id}/answer")]
         public ActionResult Index(string id)
         {
-            string questionId = "87981";
-            Question thisQuestion = _db.Questions.FirstOrDefault(questions => questions.QuestionId == questionId);
+            Question thisQuestion = _db.Questions.FirstOrDefault(questions => questions.QuestionId == id);
             return View(thisQuestion);
         }
 
