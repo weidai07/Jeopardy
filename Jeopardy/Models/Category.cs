@@ -36,32 +36,7 @@ namespace Jeopardy.Models
         myCategory.clues_count = jsonResponse[0]["clues_count"].ToString();
         OutList.Add(myCategory);
       }
-    
       return OutList;
-        
-      // foreach(Category category in Categories)
-      // {
-      //       category.GetQuestions(category.Id);
-      // }
     }
-
-    // public void GetQuestions(string id)
-    // {
-    //   string searchTerm = "/clues?category=" + id;
-    //   var apiCallTask = ApiHelper.ApiCall(searchTerm);
-    //   var result = apiCallTask.Result;
-
-    //   JArray jsonResponse = JsonConvert.DeserializeObject<JArray>(result);
-
-    //   for (int i = 0; i < jsonResponse.Count; i++)
-    //   {
-    //     Question myQuestion = new Question();
-    //     myQuestion.Id = jsonResponse[i]["id"].ToString();
-    //     myQuestion.Answer = jsonResponse[i]["answer"].ToString();
-    //     myQuestion.Body = jsonResponse[i]["question"].ToString();
-    //     myQuestion.Value = jsonResponse[i]["value"].ToString();
-    //     this.Questions.Add(myQuestion);
-    //   }
-    // }
   }
 }

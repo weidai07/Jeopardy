@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Jeopardy.Migrations
 {
-    public partial class Secondary : Migration
+    public partial class sixth : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -26,11 +26,14 @@ namespace Jeopardy.Migrations
                 name: "Questions",
                 columns: table => new
                 {
-                    Id = table.Column<string>(nullable: false),
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    QuestionId = table.Column<string>(nullable: true),
                     Answer = table.Column<string>(nullable: true),
                     Body = table.Column<string>(nullable: true),
                     Value = table.Column<string>(nullable: true),
-                    CategoryId = table.Column<int>(nullable: false)
+                    CatId = table.Column<string>(nullable: true),
+                    CategoryId = table.Column<int>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -40,7 +43,7 @@ namespace Jeopardy.Migrations
                         column: x => x.CategoryId,
                         principalTable: "Categories",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateIndex(

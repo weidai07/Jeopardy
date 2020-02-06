@@ -21,12 +21,22 @@ namespace Jeopardy.Controllers
 
         public ActionResult Index()
         {
-            var holder = Category.GetCategories(6);
-            foreach(Category cat in holder)
+            var CategoryHolder = Category.GetCategories(6);
+
+            foreach(Category cat in CategoryHolder)
             {
-                var thisCategory = _db.Categories.FirstOrDefault();
-                _db.Categories.Remove(thisCategory);
+                var firstCategory = _db.Categories.FirstOrDefault();
+                if(firstCategory != null)
+                _db.Categories.Remove(firstCategory);
                 _db.Categories.Add(cat);
+                var QuestionHolder = Question.GetQuestions(cat.CategoryId, 5);
+                foreach(Question q in QuestionHolder)
+                {
+                    var firstQuestion = _db.Questions.FirstOrDefault();
+                    if(firstQuestion != null)
+                    _db.Questions.Remove(firstQuestion);
+                    _db.Questions.Add(q);
+                }
                 _db.SaveChanges();
             }
             return View();

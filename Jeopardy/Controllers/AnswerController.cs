@@ -10,10 +10,17 @@ namespace Jeopardy.Controllers
 {
     public class AnswerController : Controller
     {
+
+        private readonly JeopardyContext _db;
+
+        public AnswerController(JeopardyContext db)
+        {
+            _db = db;
+        }
+
         [HttpGet("/answer")]
         public ActionResult Index()
         {
-            // Console.WriteLine("\n\n\n\n\n\n\n\n\n\n" + MyBoard.Categories.ElementAt(1).Questions.ElementAt(1).Value + "\n\n\n\n\n\n\n\n\n\n");
             return View();
         }
 
