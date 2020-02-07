@@ -18,13 +18,14 @@ Additional information for this game can be found on [Wikipedia](https://en.wiki
 ## Setup/Installation Requirements:
 
 1. Open - Select one of the group member names listed above 
-2. Clone repository to local machine 
+2. Clone the repository to local machine 
 3. Build and Run project
 
   - $ dotnet restore - when you are ready to restore the dependencies of the project
   - $ dotnet build - when you are ready to build the project
-  - $ dotnet watch run - to run the project 
-  - $ dotnet test - for testing the project
+  - $ dotnet ef migrations add Initial - to build the table in MySQL
+  - $ dotnet ef database update - to update the table in the database 
+  - $ dotnet watch run - to run the project and play the game 
   
 ### Specification
 
